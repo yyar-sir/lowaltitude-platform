@@ -20,9 +20,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @MapperScan("com.example.eduplatform.mapper")
 @ConfigurationPropertiesScan
 @EnableScheduling
-public class EduPlatformApplication {
+public class LowAltitudeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EduPlatformApplication.class, args);
+        SpringApplication.run(LowAltitudeApplication.class, args);
     }
 }

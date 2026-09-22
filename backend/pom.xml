@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>edu-platform</artifactId>
+    <artifactId>lowaltitude-platform</artifactId>
     <version>0.1.0</version>
-    <name>edu-platform</name>
-    <description>中小学生 AI 启蒙平台后端</description>
+    <name>lowaltitude-platform</name>
+    <description>天枢·低空智能运营管控平台后端</description>
 
     <properties>
         <java.version>21</java.version>

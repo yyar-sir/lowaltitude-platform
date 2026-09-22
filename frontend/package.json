@@ -1,9 +1,9 @@
 {
-  "name": "edu-platform-frontend",
+  "name": "lowaltitude-platform-frontend",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "中小学 AI 启蒙教育平台 - 前端（Vue 3 + Element Plus）",
+  "description": "天枢·低空智能运营管控平台 - 前端（Vue 3 + Element Plus）",
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/clean-dist.mjs dist",
