@@ -1,0 +1,44 @@
+# 依赖与构建产物
+node_modules/
+dist/
+target/
+*.class
+*.jar
+*.log
+.vite/
+
+# 本地敏感配置（务必不要提交）
+backend/src/main/resources/application-local.yml
+backend/src/main/resources/application-prod.yml
+.env
+.env.*
+.baoyu-skills/
+*.pem
+*.key
+
+# 学校材料与个人隐私
+*.docx
+*.doc
+*.pdf
+
+# 版权受限素材
+frontend/public/videos/
+
+# 备份与一次性脚本
+*.bak
+backend/sql/fix*.sql
+
+# 本地数据库文件（H2 单文件模式）
+# ⚠️ 库文件是运行时产物，不同机器上内容不同，提交会造成无意义的冲突；
+#    建表与演示数据由 backend/src/main/resources/h2/*.sql 保证，克隆后启动即自动重建。
+backend/data/
+*.mv.db
+*.trace.db
+*.lock.db
+
+# 编辑器与系统
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
