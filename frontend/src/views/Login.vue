@@ -2,13 +2,16 @@
   <div class="login-page">
     <div class="brand-side">
       <div class="brand-inner">
-        <span class="logo-emoji">🛰️</span>
+        <div class="brand-head">
+          <span class="logo-emoji">🛰️</span>
+          <span class="brand-tag">低空物流运营管控系统</span>
+        </div>
         <h1>天枢 · 低空智能运营管控平台</h1>
-        <p>低空物流「申请 — 审批 — 调度 — 监控 — 结算」全流程线上管控</p>
+        <p class="brand-desc">低空物流「申请 — 审批 — 调度 — 监控 — 结算」全流程线上管控</p>
         <div class="features">
-          <div class="feature"><span>📦</span><div><b>订单全流程</b><i>下单 → 承接 → 调度 → 跟踪 → 结算</i></div></div>
-          <div class="feature"><span>🚁</span><div><b>低空资源调度</b><i>飞行器 · 起降场站 · 作业人员</i></div></div>
-          <div class="feature"><span>🛡️</span><div><b>空域合规管控</b><i>飞行计划申报审批 · 违规预警</i></div></div>
+          <div class="feature"><span class="f-emoji">📦</span><div><b>订单全流程</b><i>下单 → 承接 → 调度 → 跟踪 → 结算</i></div></div>
+          <div class="feature"><span class="f-emoji">🚁</span><div><b>低空资源调度</b><i>飞行器 · 起降场站 · 作业人员</i></div></div>
+          <div class="feature"><span class="f-emoji">🛡️</span><div><b>空域合规管控</b><i>飞行计划申报审批 · 违规预警</i></div></div>
         </div>
       </div>
     </div>
@@ -130,17 +133,37 @@ async function submit() {
 
 <style scoped>
 .login-page { min-height: 100vh; display: grid; grid-template-columns: 1.15fr 1fr; }
-.brand-side { background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; }
-.brand-inner { max-width: 470px; padding: 40px; }
-.logo-emoji { font-size: 40px; }
-.brand-logo h1 { font-family: var(--font-title); font-size: 30px; margin: 12px 0 8px; line-height: 1.3; }
-.brand-inner h1 { font-family: var(--font-title); font-size: 29px; margin: 12px 0 8px; line-height: 1.3; }
-.brand-inner p { color: rgba(255, 255, 255, 0.72); line-height: var(--leading-body); font-size: var(--fs-sm); }
-.features { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
-.feature { display: flex; gap: 12px; align-items: flex-start; }
-.feature span { font-size: 22px; }
-.feature b { display: block; font-size: var(--fs-sm); }
-.feature i { font-style: normal; font-size: var(--fs-xs); color: rgba(255, 255, 255, 0.62); }
+
+/* ------------------------------------------------------------
+   左侧品牌区：深色底上的文字必须显式指定浅色。
+   ⚠️ 这里踩过坑：h1 只设了字号没设颜色，继承了 main.css 的 --ink（深蓝），
+      等于深色写在深色上，标题在深蓝底上几乎看不见；
+      副标题也只有 62% 白，对比度同样不足。
+   在深色面板里，标题用纯白、说明文字不低于 72% 白。
+   ------------------------------------------------------------ */
+.brand-side { background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; padding: 48px 0; }
+.brand-inner { width: 100%; max-width: 500px; padding: 0 44px; }
+
+.brand-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.logo-emoji { font-size: 38px; line-height: 1; }
+.brand-tag { font-size: var(--fs-xs); letter-spacing: 0.08em; color: var(--accent); font-weight: 700; }
+
+.brand-side h1 {
+  color: #fff;
+  font-family: var(--font-title);
+  font-size: 26px;
+  line-height: 1.35;
+  margin: 0 0 12px;
+}
+
+.brand-desc { color: rgba(255, 255, 255, 0.76); line-height: 1.75; font-size: var(--fs-sm); margin: 0; }
+
+.features { margin-top: 34px; display: flex; flex-direction: column; gap: 18px; }
+.feature { display: flex; gap: 13px; align-items: flex-start; }
+.feature .f-emoji { font-size: 21px; line-height: 1.3; }
+.feature b { display: block; font-size: var(--fs-sm); color: #fff; margin-bottom: 2px; }
+.feature i { font-style: normal; font-size: var(--fs-xs); color: rgba(255, 255, 255, 0.72); }
+
 .form-side { display: flex; align-items: center; justify-content: center; background: var(--bg); }
 .form-card { width: 400px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px 30px; box-shadow: var(--shadow-card); }
 .form-card h2 { margin: 0 0 6px; font-size: var(--fs-h2); }
